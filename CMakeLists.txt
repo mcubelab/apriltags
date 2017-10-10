@@ -56,9 +56,10 @@ include_directories(
     ${Yaml_INCLUDE_DIRS}
     ${apriltagscpp_INCLUDE_DIR}/apriltagscpp
 )
-message(STATUS ${OpenCV_INCLUDE_DIRS})
-message(STATUS ${OpenCV_LIBRARIES})
-message(STATUS ${OpenCV_LDFLAGS})
+message(STATUS 'OpenCV_LDFLAGS' ${OpenCV_INCLUDE_DIRS})
+message(STATUS 'OpenCV_LDFLAGS' ${OpenCV_LIBRARIES})
+message(STATUS 'OpenCV_LDFLAGS' ${OpenCV_LDFLAGS})
+message(STATUS 'apriltagscpp_LIBRARY' ${apriltagscpp_LIBRARY})
 add_executable(apriltags src/apriltags.cpp)
 target_link_libraries(apriltags ${catkin_LIBRARIES}
                                 ${Eigen_LIBRARIES}

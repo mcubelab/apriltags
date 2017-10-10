@@ -6,15 +6,14 @@
   <node pkg="apriltags" type="apriltags" name="apriltags" output="screen">
     <param name="~default_tag_size" value="0.033" />
     <param name="~viewer" value="true" />
+    <param name="~publish_detections_image" value="true" />
+    <param name="~display_marker_edges" value="true" />
+    <param name="~marker_thickness" value="0.01" />
 
     <rosparam command="delete" param="tag_data" />
-    <rosparam param="tag_data">
-      "0": 
-        size: 0.033
-    </rosparam>
     <rosparam param="tag_family">Tag36h11</rosparam>
-    <remap from="~image" to="/usb_cam_node/image_raw"/>
-    <remap from="~camera_info" to="/usb_cam_node/camera_info"/>
+    <remap from="~image" to="/observer/image_raw"/>
+    <remap from="~camera_info" to="/observer/camera_info"/>
     <remap from="~marker_array" to="/apriltags/marker_array"/>
     <remap from="~detections" to="/apriltags/detections"/>
     
